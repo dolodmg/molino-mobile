@@ -326,6 +326,7 @@ label {
     }
     .table {
         margin: auto;
+        overflow-x: scroll;
     }
 }
 
