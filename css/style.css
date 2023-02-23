@@ -231,15 +231,27 @@ label {
 
 
 @media screen and (max-width: 500px) {
+    .row-encabezado {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
     h1 {
         font-family: 'Secular One';
-        margin-left: 5px;
-        margin-top: 20px;
+        margin-left: 10px;
         font-size: 15px;
     }
+    hr {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
     .fa-solid.fa-arrow-left {
-        font-size: 20px;
+        font-size: 15px;
         margin-left: 5px;
+    }
+    h2 {
+        font-size: 15px;
+        margin-left: 15px;
     }
     .togglesito {
         margin-bottom: 10px;
@@ -249,5 +261,27 @@ label {
         color: rgb(20, 19, 46);
         background-color: white;
         font-size: 15px;
-    }    
+    }
+    .container-datos {
+        margin-left: 10px;
+    }
+    .table thead tr th {
+        font-size: 12px;
+    } 
+    .table tr th {
+        font-size: 12px;
+    }
+    #entrega-titulo {
+        margin-top: 10px;
+    }
+    .buttons-general {
+        margin-right: 0px;
+        margin-bottom: 0px;
+        justify-content: center;
+    }
+    
+    .buttons {
+        font-size: 13px;
+        gap: 10px;
+    }
 }
