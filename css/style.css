@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+/* CSS INDEX: RESPONSIVE MOBILE */
+
+*{
+    margin: 0;
+}
+
+.container-fluid {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+header {
+    background-color: rgb(239, 248, 252);
+}
+
+.tituloHeader {
+    font-size: 60px;
+    font-family: 'Secular One';
+    font-weight: bold;
+    color:rgb(73, 72, 75);
+    text-align: center;
+    padding-top: 100px;
+}
+
+.opciones {
+    font-family: 'Source Sans Pro';
+    font-size: 30px;
+    font-weight: bolder;
+    margin: 30px 50px 15px;
+}
+
+.d-grid.gap-10 {
+    margin-bottom: 100px;
+}
+
+.botones {
+    font-family: 'Source Sans Pro';
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    background-color:rgb(233, 143, 143);
+    border: none;
+    font-size: 20px;
+}
+
+.botones:hover {
+    background-color: rgb(114, 17, 17);
+}
+
+@media screen and (max-width: 768px) {
+    .tituloHeader {
+        padding-top: 10px;
+        font-size: 40px;
+    }
+    .opciones {
+        margin-left: 15px;
+    }
+    .btn-primary {
+        margin-left: 15px;
+        font-size: 28px;
+    }
+}
+
+/* CSS ALTA ENTREGA: RESPONSIVE MOBILE */
+
+
+hr {
+    margin-left: 68px;
+    margin-right: 68px;
+}
+
+.row-encabezado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fa-solid.fa-arrow-left {
+    margin-left: 68px;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+h1 {
+    font-family: 'Secular One';
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-left: 68px;
+}
+
+.container-datos {
+    margin-left: 68px;
+    margin-bottom: 30px;
+}
+
+tr .transparent td {
+    background-color: white;
+    border: hidden;
+}
+
+label {
+    font-size: 15px;
+    font-family: 'Source Sans Pro';
+}
+
+.row {
+    margin-bottom: 25px;
+}
+
+.form-control {
+    width: 170px;
+    height: 28px;
+}
+
+.container-tabla {
+    font-size: 15px;
+}
+
+.table {
+    margin: auto;
+}
+
+.buttons-general {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.buttons {
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+
+.buttons.guardar {
+    background-color:rgb(23, 22, 53);
+}
+
+.buttons.cancelar {
+    background-color:rgb(153, 1, 1);
+}
+
+.tilde-class {
+    border: hidden !important;
+}
+
+.boton-detalle-class {
+    display: flex;
+    justify-content: left;
+    border: none !important;
+    vertical-align:bottom;
+}
+
+.boton-detalle {
+    background-color: rgb(23, 22, 53);
+    font-size: 15px;
+    border: none;
+}
+
+#data_table {
+    text-align: center;
+    width: 90%;
+}
+
+#data_table2 {
+    text-align: center;
+    width: 90%;
+}
+
+.acciones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.acciones button {
+    background-color: white;
+    border: none;
+}
+
+.acciones button:hover {
+    color: white !important;
+    background-color: white !important;
+    border: none !important;
+}
+
+.acciones button:focus {
+    color: white;
+    background-color: white;
+}
+/* .btn.btn-primary { */
+    /* background-color:white; */
+    /* color: rgb(20, 19, 46); */
+    /* padding: 10px; */
+    /* margin: 0; */
+/* } */
+
+.fa-solid {
+    border: none;
+    color: rgb(20, 19, 46);
+    background-color: white;
+}
+
+.insertRow {
+    font-size: 10px;
+    margin-top: 10px;
+    background-color: rgb(233, 143, 143);
+    border: none;
+}
+
+.add-new:hover {
+    background-color: rgb(114, 17, 17);
+}
+
+#encabezado-popup {
+    margin-top: 30px;
+}
+
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-family: 'Secular One';
+        margin-left: 30px;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    .fa-solid.fa-arrow-left {
+        font-size: 20px;
+    }
+    .togglesito {
+        margin-bottom: 10px;
+    }
+    .acciones .fa-solid {
+        border: none;
+        color: rgb(20, 19, 46);
+        background-color: white;
+        font-size: 15px;
+    }    
+}
