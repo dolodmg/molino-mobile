@@ -318,11 +318,14 @@ label {
     .boton-detalle {
         font-size: 13px;
     }
-    #data_table {
+    #data_table1 {
         margin: 5px 10px 5px;
     }
     #data_table2 {
         margin: 5px 10px 5px;
+    }
+    .table-responsive {
+        margin: auto;
     }
 }
 
