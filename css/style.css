@@ -175,10 +175,15 @@ label {
     vertical-align:bottom;
 }
 
-.boton-detalle {
+#showAccount, #showPopup, #showScrollable {
     background-color: rgb(23, 22, 53);
     font-size: 15px;
     border: none;
+    color: white;
+}
+
+.boton-detalle-class {
+    background-color: white;
 }
 
 #data_table {
