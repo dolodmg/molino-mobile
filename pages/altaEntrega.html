@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+        <script src="bootstrap/js/bootstrap.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -40,11 +41,11 @@
                     </thead> 
                     <tr class="transparent">
                         <th scope="row">1</th>
-                        <td class="col-s-2"></td>
-                        <td class="col-s-2"></td>
-                        <td class="col-s-2"></td>
-                        <td class="col-s-2"></td>
-                        <td class="col-s-2"></td>
+                        <td class="col-s-2">562</td>
+                        <td class="col-s-2">Santiago Libano</td>
+                        <td class="col-s-2">Mitre 493</td>
+                        <td class="col-s-2">27/04/2022</td>
+                        <td class="col-s-2">$12400</td>
                         <td class="tilde-class col-s-2"><input type="checkbox" id="myCheck"></td>
                         <td class="boton-detalle-class col-s-2">
                             <a href="./pop-up-entrega.html" onclick="return popitup('./pop-up-entrega.html')">
@@ -56,11 +57,11 @@
                     </tr>
                     <tr class="transparent">
                         <th scope="row">2</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>341</td>
+                        <td>Dolores Dominguez</td>
+                        <td>Godoy Cruz 242</td>
+                        <td>04/02/2023</td>
+                        <td>$12000</td>
                         <td class="tilde-class"><input type="checkbox" id="myCheck"></td>
                         <td class="boton-detalle-class">
                             <a href="./pop-up-entrega.html" onclick="return popitup('./pop-up-entrega.html')">
@@ -72,11 +73,11 @@
                     </tr>
                     <tr class="transparent">
                         <th scope="row">3</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>439</td>
+                        <td>Franco Kral</td>
+                        <td>Calle 12 4143</td>
+                        <td>02/01/2023</td>
+                        <td>$40020</td>
                         <td class="tilde-class"><input type="checkbox" id="myCheck"></td>
                         <td class="boton-detalle-class">
                             <a href="./pop-up-entrega.html" onclick="return popitup('./pop-up-entrega.html')">
@@ -93,18 +94,15 @@
             <form action="reg.php" method="POST"></form>
             <div class="container-datos">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 drop-estado">
                         <label for="dropdown-label" name="transportista">TRANSPORTISTA</label>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle togglesito" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            FedEx
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <button class="dropdown-item" type="button">FedEx</button>
-                                <button class="dropdown-item" type="button">OCA</button>
-                                <button class="dropdown-item" type="button">DMG</button>
-                            </div>
-                        </div>
+                        <select class="form-select btn btn-primary" aria-label="Default select example">
+                            <option selected>Andreani</option>
+                            <option value="1">Andreani</option>
+                            <option value="2">OCASA</option>
+                            <option value="3">FedEx</option>
+                            <option value="4">Transporte Molino</option>
+                        </select>
                     </div>
                     <div class="col-md-3">
                         <label for="form-label" class="form-label">FECHA ENTREGA</label>
@@ -112,18 +110,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 drop-estado">
                         <label for="dropdown-label">ESTADO</label>
-                        <div class="dropdown togglesito">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            A despachar
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <button class="dropdown-item" type="button">A despachar</button>
-                                <button class="dropdown-item" type="button">En camino</button>
-                                <button class="dropdown-item" type="button">Entregado</button>
-                            </div>
-                        </div>
+                        <select class="form-select btn btn-primary" aria-label="Default select example">
+                            <option selected>A despachar</option>
+                            <option value="1">A despachar</option>
+                            <option value="2">En camino</option>
+                            <option value="3">Entregado</option>
+                        </select>
                     </div>
                     <div class="col-md-3">
                         <label for="form-label" class="form-label">CÓDIGO DE SEGUIMIENTO</label>
