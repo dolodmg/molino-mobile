@@ -12,8 +12,11 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/style.css">
         <script src="https://kit.fontawesome.com/25a709830d.js" crossorigin="anonymous"></script>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:600,900,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../css/mobiscroll.javascript.min.css">
+        <script src="../js/mobiscroll.javascript.min.js"></script>
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
         <div class="container-fluid dos">
@@ -48,11 +51,11 @@
                         <td class="col-s-2">$12400</td>
                         <td class="tilde-class col-s-2"><input type="checkbox" id="myCheck"></td>
                         <td class="boton-detalle-class col-s-2">
-                            <a href="./pop-up-entrega.html" onclick="return popitup('./pop-up-entrega.html')">
-                                <button class="boton-detalle btn btn-primary">
-                                    VER DETALLE
-                                </button>
-                            </a>
+                            <div mbsc-form>
+                                <div class="mbsc-btn-group-block">
+                                    <button mbsc-button id="showAccount">VER DETALLE</button>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr class="transparent">
@@ -64,11 +67,11 @@
                         <td>$12000</td>
                         <td class="tilde-class"><input type="checkbox" id="myCheck"></td>
                         <td class="boton-detalle-class">
-                            <a href="./pop-up-entrega2.html" onclick="return popitup('./pop-up-entrega2.html')">
-                                <button class="boton-detalle btn btn-primary">
-                                    VER DETALLE
-                                </button>
-                            </a>
+                            <div mbsc-form>
+                                <div class="mbsc-btn-group-block">
+                                    <button mbsc-button id="showPopup">VER DETALLE</button>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr class="transparent">
@@ -80,15 +83,15 @@
                         <td>$40020</td>
                         <td class="tilde-class"><input type="checkbox" id="myCheck"></td>
                         <td class="boton-detalle-class">
-                            <a href="./pop-up-entrega3.html" onclick="return popitup('./pop-up-entrega3.html')">
-                                <button class="boton-detalle btn btn-primary">
-                                    VER DETALLE
-                                </button>
-                            </a>
+                            <div mbsc-form>
+                                <div class="mbsc-btn-group-block">
+                                    <button mbsc-button id="showScrollable">VER DETALLE</button>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </table>
-            </div>
+            </div>            
             <h2 id="entrega-titulo">Entrega</h2>
             <hr>
             <form action="reg.php" method="POST"></form>
@@ -168,7 +171,150 @@
                 <button class="buttons cancelar btn btn-primary">CANCELAR</button>
             </div>
         </div>
-    </body>
+        <div id="demo" class="mbsc-cloak">
+            <div class="mbsc-align-center mbsc-padding">
+                <h2 id="encabezado-popup">Detalle de pedido</h2>
+                <hr>
+                <div class="container-tabla">
+                    <table id="data_table" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>CÓDIGO DE PRODUCTO</th>
+                                <th>NOMBRE</th>
+                                <th>CANTIDAD ENTREGADA</th>
+                                <th>CANTIDAD PENDIENTE</th>
+                                <th>CANTIDAD PLANIFICADA</th>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td>6562</td>
+                                <td>HARINA 0000</td>
+                                <td>49 KG</td>
+                                <td>20 KG</td>
+                                <td>12 KG</td>
+                            </tr> 
+                            <tr>
+                                <td>231</td>
+                                <td>HARINA INTEGRAL</td>
+                                <td>20 bolsas</td>
+                                <td>38 bolsas</td>
+                                <td>12 bolsas</td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="list" class="mbsc-cloak">
+            <div class="mbsc-align-center mbsc-padding 2">
+                <h2 id="encabezado-popup">Detalle de pedido</h2>
+                <hr>
+                <div class="container-tabla">
+                    <table id="data_table" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>CÓDIGO DE PRODUCTO</th>
+                                <th>NOMBRE</th>
+                                <th>CANTIDAD ENTREGADA</th>
+                                <th>CANTIDAD PENDIENTE</th>
+                                <th>CANTIDAD PLANIFICADA</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>6562</td>
+                            <td>HARINA 0000</td>
+                            <td>77 KG</td>
+                            <td>3 KG</td>
+                            <td>10 KG</td>
+                        </tr> 
+                        <tr>
+                            <td>7353</td>
+                            <td>TRIGO DE HARINA</td>
+                            <td>29 bolsas</td>
+                            <td>12 bolsas</td>
+                            <td>17 bolsas</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="scrollable" class="mbsc-cloak">
+            <div class="mbsc-align-center mbsc-padding 2">
+                <h2 id="encabezado-popup">Detalle de pedido</h2>
+                <hr>
+                <div class="container-tabla">
+                    <table id="data_table" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>CÓDIGO DE PRODUCTO</th>
+                                <th>NOMBRE</th>
+                                <th>CANTIDAD ENTREGADA</th>
+                                <th>CANTIDAD PENDIENTE</th>
+                                <th>CANTIDAD PLANIFICADA</th>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td>231</td>
+                                <td>HARINA INTEGRAL</td>
+                                <td>40 KG</td>
+                                <td>22 KG</td>
+                                <td>14 KG</td>
+                            </tr> 
+                            <tr>
+                                <td>121</td>
+                                <td>HARINA 00</td>
+                                <td>12 KG</td>
+                                <td>3 KG</td>
+                                <td>1 KG</td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script>
+        mobiscroll.settings = {
+            lang: 'es',                                         // Specify language like: lang: 'pl' or omit setting to use default
+            theme: 'ios',                                       // Specify theme like: theme: 'ios' or omit setting to use default
+            themeVariant: 'light'                               // More info about themeVariant: https://docs.mobiscroll.com/4-10-10/javascript/popup#opt-themeVariant
+        };
+        
+        var account = mobiscroll.popup('#demo', {
+                display: 'center'                               // Specify display mode like: display: 'bottom' or omit setting to use default
+            }),
+            popup = mobiscroll.popup('#list', {
+                display: 'center',                              // Specify display mode like: display: 'bottom' or omit setting to use default
+                onSet: function (event, inst) {                 // More info about onSet: https://docs.mobiscroll.com/4-10-10/javascript/popup#event-onSet
+                    var checked = document.querySelector('input[name="update"]:checked');
+                    document.getElementById('showPopup').value = checked ? checked.value : '';
+                }
+            }),
+            scrollable = mobiscroll.popup('#scrollable', {
+                display: 'center',                              // Specify display mode like: display: 'bottom' or omit setting to use default
+                onSet: function (event, inst) {                 // More info about onSet: https://docs.mobiscroll.com/4-10-10/javascript/popup#event-onSet
+                    var checked = document.querySelector('input[name="update"]:checked');
+                    document.getElementById('showScrollable').value = checked ? checked.value : '';  
+                                           }
+                                                                      // More info about scrollLock: https://docs.mobiscroll.com/4-10-10/javascript/popup#opt-scrollLock                                    // More info about buttons: https://docs.mobiscroll.com/4-10-10/javascript/popup#opt-buttons
+            });
+        
+        document
+            .getElementById('showAccount')
+            .addEventListener('click', function () {
+                account.show();
+            }, false);
+        
+        document
+            .getElementById('showPopup')
+            .addEventListener('click', function () {
+                popup.show();
+            }, false);
+        
+        document
+            .getElementById('showScrollable')
+            .addEventListener('click', function () {
+                scrollable.show();
+            }, false);
+        </script>
+</body>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
@@ -225,25 +371,4 @@ function add_row()
  document.getElementById("new_name").value="";
  document.getElementById("new_cantidad").value="";
 }
-
-window.addEventListener("load", function(){
-    setTimeout(
-        function open(event){
-            document.querySelector(".popup").style.display = "block";
-        },
-        2000 
-    )
-});
-
-
-document.querySelector("#close").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
-});
-
-function popitup(url) 
-   {
-    newwindow=window.open(url,'name','height=300,width=650,screenX=400,screenY=350');
-    if (window.focus) {newwindow.focus()}
-    return false;
-   }
 </script>

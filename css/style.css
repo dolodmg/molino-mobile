@@ -70,6 +70,15 @@ header {
 
 /* CSS ALTA ENTREGA: RESPONSIVE MOBILE */
 
+.md-content-scroll .mbsc-fr-c {
+    height: 400px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.md-content-scroll .mbsc-popup {
+    filter: blur(8px);
+}
 
 hr {
     margin-left: 68px;
