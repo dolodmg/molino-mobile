@@ -136,6 +136,7 @@ label {
     justify-content: end;
     margin-right: 50px;
     margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 .buttons {
@@ -276,7 +277,8 @@ label {
     }
     .buttons-general {
         margin-right: 0px;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
+        margin-top: 20px;
         justify-content: center;
     }
     
