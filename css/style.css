@@ -233,12 +233,13 @@ label {
 @media screen and (max-width: 500px) {
     h1 {
         font-family: 'Secular One';
-        margin-left: 30px;
+        margin-left: 5px;
         margin-top: 20px;
-        font-size: 20px;
+        font-size: 15px;
     }
     .fa-solid.fa-arrow-left {
         font-size: 20px;
+        margin-left: 5px;
     }
     .togglesito {
         margin-bottom: 10px;
