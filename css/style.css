@@ -324,9 +324,8 @@ label {
     #data_table2 {
         margin: 5px 10px 5px;
     }
-    .table {
+    .container-tabla1 {
         margin: auto;
-        overflow-x: scroll;
     }
 }
 
