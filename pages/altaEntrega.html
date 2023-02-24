@@ -13,9 +13,6 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/25a709830d.js" crossorigin="anonymous"></script>
-        <link href='https://fonts.googleapis.com/css?family=Raleway:600,900,400' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="../css/mobiscroll.javascript.min.css">
-        <script src="../js/mobiscroll.javascript.min.js"></script>
         <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
@@ -37,8 +34,6 @@
                             <th>CLIENTE</th>
                             <th>DIRECCIÓN</th>
                             <th>FECHA PEDIDO</th>
-                            <th>MONTO</th>
-                            <th style="border: hidden"></th>
                             <th style="border: hidden"></th>
                         </tr>
                     </thead> 
@@ -48,15 +43,7 @@
                         <td class="col-s-2">Santiago Libano</td>
                         <td class="col-s-2">Mitre 493</td>
                         <td class="col-s-2">27/04/2022</td>
-                        <td class="col-s-2">$12400</td>
                         <td class="tilde-class col-s-2"><input type="checkbox" id="myCheck"></td>
-                        <td class="boton-detalle-class col-s-2">
-                            <div mbsc-form style="background-color: white;">
-                                <div class="mbsc-btn-group-block">
-                                    <button mbsc-button id="showAccount">VER DETALLE</button>
-                                </div>
-                            </div>
-                        </td>
                     </tr>
                     <tr class="transparent">
                         <th scope="row">2</th>
@@ -64,15 +51,7 @@
                         <td>Dolores Dominguez</td>
                         <td>Godoy Cruz 242</td>
                         <td>04/02/2023</td>
-                        <td>$12000</td>
                         <td class="tilde-class"><input type="checkbox" id="myCheck"></td>
-                        <td class="boton-detalle-class">
-                            <div mbsc-form style="background-color: white;">
-                                <div class="mbsc-btn-group-block">
-                                    <button mbsc-button id="showPopup">VER DETALLE</button>
-                                </div>
-                            </div>
-                        </td>
                     </tr>
                     <tr class="transparent">
                         <th scope="row">3</th>
@@ -80,15 +59,7 @@
                         <td>Franco Kral</td>
                         <td>Calle 12 4143</td>
                         <td>02/01/2023</td>
-                        <td>$40020</td>
                         <td class="tilde-class"><input type="checkbox" id="myCheck"></td>
-                        <td class="boton-detalle-class">
-                            <div mbsc-form style="background-color: white;">
-                                <div class="mbsc-btn-group-block">
-                                    <button mbsc-button id="showScrollable">VER DETALLE</button>
-                                </div>
-                            </div>
-                        </td>
                     </tr>
                 </table>
             </div>            
@@ -132,16 +103,20 @@
                 <table id="data_table" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>NÚMERO DE PEDIDO</th>
                             <th>CÓDIGO DE PRODUCTO</th>
-                            <th>CANTIDAD A ENTREGAR</th>
+                            <th>CANTIDAD ENTREGADA</th>
+                            <th>CANTIDAD PENDIENTE</th>
+                            <th>CANTIDAD PLANIFICADA</th>
+                            <th>CANT A ENTREGAR</th>
                             <th>ACCIONES</th>
                         </tr>
                     </thead>
                         <tr id="row1">
                             <td id="codigo_row1"></td>
-                            <td id="name_row1"></td>
                             <td id="cantidad_row1"></td>
+                            <td id="cantidadp_row1"></td>
+                            <td id="cantidadpl_row1"></td>
+                            <td id="entrega_row1"></td>
                             <td class="acciones">
                                 <button type="button" id="edit_button1" value="Edit" class="btn btn-primary edit" onclick="edit_row('1')">
                                     <i class="fa-solid fa-pencil"></i>
@@ -156,8 +131,10 @@
                         </tr> 
                         <tr>
                             <td><input type="text" id="new_codigo"></td>
-                            <td><input type="text" id="new_name"></td>
                             <td><input type="text" id="new_cantidad"></td>
+                            <td><input type="text" id="new_cantidadp"></td>
+                            <td><input type="text" id="new_cantidadpl"></td>
+                            <td><input type="text" id="new_entrega"></td>
                             <td class="acciones">
                                 <button type="submit" class="btn btn-primary add" onclick="add_row();" value="Add Row">
                                     <i class="fa-solid fa-plus"></i>
@@ -169,151 +146,8 @@
             <div class="buttons-general">
                 <button class="buttons guardar btn btn-primary">GUARDAR</button>
                 <button class="buttons cancelar btn btn-primary">CANCELAR</button>
-            </div>
-        <div id="demo" class="mbsc-cloak">
-            <div class="mbsc-align-center mbsc-padding">
-                <h2 id="encabezado-popup">Detalle de pedido</h2>
-                <hr>
-                <div class="table-responsive">
-                    <table id="data_table" class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>CÓDIGO DE PRODUCTO</th>
-                                <th>NOMBRE</th>
-                                <th>CANTIDAD ENTREGADA</th>
-                                <th>CANTIDAD PENDIENTE</th>
-                                <th>CANTIDAD PLANIFICADA</th>
-                            </tr>
-                        </thead>
-                            <tr>
-                                <td>6562</td>
-                                <td>HARINA 0000</td>
-                                <td>49 KG</td>
-                                <td>20 KG</td>
-                                <td>12 KG</td>
-                            </tr> 
-                            <tr>
-                                <td>231</td>
-                                <td>HARINA INTEGRAL</td>
-                                <td>20 bolsas</td>
-                                <td>38 bolsas</td>
-                                <td>12 bolsas</td>
-                            </tr>
-                    </table>
-                </div>
-            </div>
+            </div>   
         </div>
-        <div id="list" class="mbsc-cloak">
-            <div class="mbsc-align-center mbsc-padding 2">
-                <h2 id="encabezado-popup">Detalle de pedido</h2>
-                <hr>
-                <div class="table-responsive">
-                    <table id="data_table" class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>CÓDIGO DE PRODUCTO</th>
-                                <th>NOMBRE</th>
-                                <th>CANTIDAD ENTREGADA</th>
-                                <th>CANTIDAD PENDIENTE</th>
-                                <th>CANTIDAD PLANIFICADA</th>
-                            </tr>
-                        </thead>
-                        <tr>
-                            <td>6562</td>
-                            <td>HARINA 0000</td>
-                            <td>77 KG</td>
-                            <td>3 KG</td>
-                            <td>10 KG</td>
-                        </tr> 
-                        <tr>
-                            <td>7353</td>
-                            <td>TRIGO DE HARINA</td>
-                            <td>29 bolsas</td>
-                            <td>12 bolsas</td>
-                            <td>17 bolsas</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div id="scrollable" class="mbsc-cloak">
-            <div class="mbsc-align-center mbsc-padding 2">
-                <h2 id="encabezado-popup">Detalle de pedido</h2>
-                <hr>
-                <div class="table-responsive">
-                    <table id="data_table" class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>CÓDIGO DE PRODUCTO</th>
-                                <th>NOMBRE</th>
-                                <th>CANTIDAD ENTREGADA</th>
-                                <th>CANTIDAD PENDIENTE</th>
-                                <th>CANTIDAD PLANIFICADA</th>
-                            </tr>
-                        </thead>
-                            <tr>
-                                <td>231</td>
-                                <td>HARINA INTEGRAL</td>
-                                <td>40 KG</td>
-                                <td>22 KG</td>
-                                <td>14 KG</td>
-                            </tr> 
-                            <tr>
-                                <td>121</td>
-                                <td>HARINA 00</td>
-                                <td>12 KG</td>
-                                <td>3 KG</td>
-                                <td>1 KG</td>
-                            </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-        <script>
-        mobiscroll.settings = {
-            lang: 'es',                                         // Specify language like: lang: 'pl' or omit setting to use default
-            theme: 'ios',                                       // Specify theme like: theme: 'ios' or omit setting to use default
-            themeVariant: 'light'                               // More info about themeVariant: https://docs.mobiscroll.com/4-10-10/javascript/popup#opt-themeVariant
-        };
-        
-        var account = mobiscroll.popup('#demo', {
-                display: 'center'                               // Specify display mode like: display: 'bottom' or omit setting to use default
-            }),
-            popup = mobiscroll.popup('#list', {
-                display: 'center',                              // Specify display mode like: display: 'bottom' or omit setting to use default
-                onSet: function (event, inst) {                 // More info about onSet: https://docs.mobiscroll.com/4-10-10/javascript/popup#event-onSet
-                    var checked = document.querySelector('input[name="update"]:checked');
-                    document.getElementById('showPopup').value = checked ? checked.value : '';
-                }
-            }),
-            scrollable = mobiscroll.popup('#scrollable', {
-                display: 'center',                              // Specify display mode like: display: 'bottom' or omit setting to use default
-                onSet: function (event, inst) {                 // More info about onSet: https://docs.mobiscroll.com/4-10-10/javascript/popup#event-onSet
-                    var checked = document.querySelector('input[name="update"]:checked');
-                    document.getElementById('showScrollable').value = checked ? checked.value : '';  
-                                           }
-                                                                      // More info about scrollLock: https://docs.mobiscroll.com/4-10-10/javascript/popup#opt-scrollLock                                    // More info about buttons: https://docs.mobiscroll.com/4-10-10/javascript/popup#opt-buttons
-            });
-        
-        document
-            .getElementById('showAccount')
-            .addEventListener('click', function () {
-                account.show();
-            }, false);
-        
-        document
-            .getElementById('showPopup')
-            .addEventListener('click', function () {
-                popup.show();
-            }, false);
-        
-        document
-            .getElementById('showScrollable')
-            .addEventListener('click', function () {
-                scrollable.show();
-            }, false);
-        </script>
 </body>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -326,27 +160,37 @@ function edit_row(no)
  document.getElementById("save_button"+no).style.display="block";
 
  var codigo=document.getElementById("codigo_row"+no);
- var name=document.getElementById("name_row"+no);
  var cantidad=document.getElementById("cantidad_row"+no);
+ var cantidadp=document.getElementById("cantidadp_row"+no);
+ var cantidadpl=document.getElementById("cantidadpl_row"+no);
+ var entrega=document.getElementById("entrega_row"+no);
 
  var codigo_data=codigo.innerHTML;
- var name_data=name.innerHTML;
  var cantidad_data=cantidad.innerHTML;
+ var cantidadp_data=cantidadp.innerHTML;
+ var cantidadpl_data=cantidadpl.innerHTML;
+ var entrega_data=entrega.innerHTML;
 	
  codigo.innerHTML="<input type='text' id='codigo_text"+no+"' value='"+codigo_data+"'>";
- name.innerHTML="<input type='text' id='name_text"+no+"' value='"+name_data+"'>";
  cantidad.innerHTML="<input type='text' id='cantidad_text"+no+"' value='"+cantidad_data+"'>";
+ cantidadp.innerHTML="<input type='text' id='cantidadp_text"+no+"' value='"+cantidadp_data+"'>";
+ cantidadpl.innerHTML="<input type='text' id='cantidadpl_text"+no+"' value='"+cantidadpl_data+"'>";
+ entrega.innerHTML="<input type='text' id='entrega_text"+no+"' value='"+entrega_data+"'>";
 }
 
 function save_row(no)
 {
  var codigo_val=document.getElementById("codigo_text"+no).value;
- var name_val=document.getElementById("name_text"+no).value;
  var cantidad_val=document.getElementById("cantidad_text"+no).value;
+ var cantidadp_val=document.getElementById("cantidadp_text"+no).value;
+ var cantidadpl_val=document.getElementById("cantidadpl_text"+no).value;
+ var entrega_val=document.getElementById("entrega_text"+no).value;
 
  document.getElementById("codigo_row"+no).innerHTML=codigo_val;
- document.getElementById("name_row"+no).innerHTML=name_val;
  document.getElementById("cantidad_row"+no).innerHTML=cantidad_val;
+ document.getElementById("cantidadp_row"+no).innerHTML=cantidadp_val;
+ document.getElementById("cantidadpl_row"+no).innerHTML=cantidadpl_val;
+ document.getElementById("entrega_row"+no).innerHTML=entrega_val;
 
  document.getElementById("edit_button"+no).style.display="block";
  document.getElementById("save_button"+no).style.display="none";
@@ -360,16 +204,21 @@ function delete_row(no)
 function add_row()
 {
  var new_codigo=document.getElementById("new_codigo").value;
- var new_name=document.getElementById("new_name").value;
  var new_cantidad=document.getElementById("new_cantidad").value;
+ var new_cantidadp=document.getElementById("new_cantidadp").value;
+ var new_cantidadpl=document.getElementById("new_cantidadpl").value;
+ var new_entrega=document.getElementById("new_entrega").value;
 	
  var table=document.getElementById("data_table");
  var table_len=(table.rows.length)-1;
- var row = table.insertRow(table_len).outerHTML= "<tr id='row"+table_len+"'><td id='codigo_row"+table_len+"'>"+new_codigo+"</td><td id='name_row"+table_len+"'>"+new_name+"</td><td id='cantidad_row"+table_len+"'>"+new_cantidad+"</td><td class='acciones'><button type='button' id='edit_button"+table_len+"' value='Edit' class='btn btn-primary edit' onclick='edit_row("+table_len+")'><i class='fa-solid fa-pencil'></i></button><button type='button' id='save_button"+table_len+"' value='Save' class='btn btn-primary save' onclick='save_row("+table_len+")'><i class='fa-solid fa-floppy-disk'></i></button><button type='button' value='Delete' class='btn btn-primary delete' onclick='delete_row("+table_len+")''><i class='fa-solid fa-trash'></i></button></td></tr>";
+ var row = table.insertRow(table_len).outerHTML= "<tr id='row"+table_len+"'><td id='codigo_row"+table_len+"'>"+new_codigo+"</td><td id='cantidad_row"+table_len+"'>"+new_cantidad+"</td><td id='cantidadp_row"+table_len+"'>"+new_cantidadp+"</td><td id='cantidadpl_row"+table_len+"'>"+new_cantidadpl+"</td><td id='entrega_row"+table_len+"'>"+new_entrega+"</td><td class='acciones'><button type='button' id='edit_button"+table_len+"' value='Edit' class='btn btn-primary edit' onclick='edit_row("+table_len+")'><i class='fa-solid fa-pencil'></i></button><button type='button' id='save_button"+table_len+"' value='Save' class='btn btn-primary save' onclick='save_row("+table_len+")'><i class='fa-solid fa-floppy-disk'></i></button><button type='button' value='Delete' class='btn btn-primary delete' onclick='delete_row("+table_len+")''><i class='fa-solid fa-trash'></i></button></td></tr>";
 
  document.getElementById("new_codigo")
- document.getElementById("new_name").value="";
  document.getElementById("new_cantidad").value="";
+ document.getElementById("new_cantidadp").value="";
+ document.getElementById("new_cantidadpl").value="";
+ document.getElementById("new_entrega").value="";
+
 }
 </script>
 
